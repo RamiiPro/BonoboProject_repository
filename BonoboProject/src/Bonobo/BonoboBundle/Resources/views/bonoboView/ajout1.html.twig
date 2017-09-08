@@ -1,0 +1,53 @@
+{% extends "BonoboBonoboBundle::layout.html.twig" %}
+
+{% block title %}Informations Personnelles{% endblock %}
+ {% block menu %}
+     <div id="menu">
+         <ul>
+             <li class="active"><a href="{{ path('bonobo_bonobo_list') }}" accesskey="1" title="">Liste des Bonobos</a></li>
+             <li><a href="{{ path('bonobo_bonobo_ajouter1') }}" accesskey="2" title="">mes informations personnelles</a></li>
+             <li><a href="{{ path('bonobo_bonobo_Recherche') }}" accesskey="3" title="">Chercher un Bonobo</a></li>
+         </ul>
+     </div>
+ {% endblock  %}
+{% block body %}
+
+<h1>Mes Informations Personnelles</h1>
+    <br><br>
+
+<form method="POST" class="row">
+    <center>
+    <table>
+    <tr>
+        <td>Nom:</td>
+        <td><input type="text" name="nom" class="form-control" required></td>
+    </tr>
+
+    <tr>
+        <td>Age:</td>
+        <td><input type="number" min="0" name="age" class="form-control" required></td>
+    </tr>
+
+    <tr>
+        <td>Famille:</td>
+        <td><input type="text" name="famille" class="form-control" required></td>
+    </tr>
+
+    <tr>
+        <td>Race:</td>
+        <td><input type="text" name="race" class="form-control" required></td>
+    </tr>
+
+    <tr>
+        <td>Nourriture:</td>
+        <td><input type="text" name="nourriture" class="form-control" required></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><input type="submit" name="submit" id="btnSubmit" class="btn btn-success" value="Valider" /></td>
+    </tr>
+    </table>
+        <center>
+</form>
+{% endblock %}

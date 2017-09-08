@@ -1,0 +1,27 @@
+bonobo_bonobo_homepage:
+    path:     /
+    defaults: { _controller: BonoboBonoboBundle:Default:index }
+
+bonobo_bonobo_list:
+    path:     /liste
+    defaults: { _controller: BonoboBonoboBundle:Bonobo:List }
+
+bonobo_bonobo_ajouter1:
+    path:     /add1
+    defaults: { _controller: BonoboBonoboBundle:Bonobo:Add1 }
+
+bonobo_bonobo_supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: BonoboBonoboBundle:Bonobo:Delete }
+
+bonobo_bonobo_Update:
+    path:     /Update/{id}
+    defaults: { _controller: BonoboBonoboBundle:Bonobo:Update }
+
+bonobo_bonobo_Recherche:
+    path:     /find
+    defaults: { _controller: BonoboBonoboBundle:Bonobo:Recherche }
+
+bonobo_bonobo_amis:
+    path:     /inviter/{id}
+    defaults: { _controller: BonoboBonoboBundle:Bonobo:Inviter }

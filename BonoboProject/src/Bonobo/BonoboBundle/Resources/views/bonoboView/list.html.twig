@@ -1,0 +1,40 @@
+{% extends "BonoboBonoboBundle::layout.html.twig" %}
+
+{% block title %}accueil{% endblock %}
+{% block body %}
+<h1>List Bonobo</h1>
+<br><br>
+<center>
+<table class="table">
+    <tr>
+        <th>Nom</th>
+        <th>Age</th>
+        <th>Famille</th>
+        <th>Race</th>
+        <th>Nourriture</th>
+        <th colspan="2">Action</th>
+
+
+    </tr>
+    {% for list in listes %}
+        <tr>
+            <td>{{ list.name }}</td>
+            <td>{{ list.age }}</td>
+            <td>{{ list.famille }}</td>
+            <td>{{ list.race }}</td>
+            <td>{{ list.nourriture }}</td>
+           {% if list.user.id != app.user.id %}
+                <td><a href="{{ path('bonobo_bonobo_Update',{'id':list.id})}}"><input type="submit" name="submit" id="btnSubmit" class="btn btn-xs btn-info" value="Modifier" /></a></td>
+
+                <td><a href="{{ path('bonobo_bonobo_supprimer',{'id':list.id}) }}"><input type="submit" name="submit" id="btnSubmit" class="btn btn-xs btn-danger" value="Supprimer" /></a></td>
+
+                <td><a href="{{ path('bonobo_bonobo_amis',{'id':list.id})}}"><input type="submit" name="submit" id="btnSubmit" class="btn btn-xs btn-warning" value="Ajouter comme Amis" /></a></td>
+            {% endif %}
+
+
+        </tr>
+    {% endfor %}
+</table>
+    <a href="{{ path('bonobo_bonobo_Recherche') }}">Effectuer une recherche</a>
+<center>
+{% endblock %}

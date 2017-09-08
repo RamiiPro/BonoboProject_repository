@@ -1,0 +1,40 @@
+{% extends "BonoboBonoboBundle::layout.html.twig" %}
+
+{% block title %}accueil{% endblock %}
+{% block body %}
+
+
+    {{ form_start(Form) }}
+    <center>
+    <table>
+    <tr>
+        <td>Chercher par Nom Bonobo:&nbsp;&nbsp;</td>
+        <td>{{ form_widget(Form.name) }}</td>
+        <td>{{ form_widget(Form.Valider) }}</td>
+    </tr>
+    <table>
+    {{ form_end(Form) }}
+
+    <h2>Liste des Bonobos</h2>
+    <br><br>
+    <table class="table">
+        <tr>
+            <th>Nom</th>
+            <th>Age</th>
+            <th>Famille</th>
+            <th>Race</th>
+            <th>Nourriture</th>
+        </tr>
+
+        {% for list in modeles %}
+            <tr>
+                <td>{{ list.name }}</td>
+                <td>{{ list.age }}</td>
+                <td>{{ list.famille }}</td>
+                <td>{{ list.race }}</td>
+                <td>{{ list.nourriture }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <center>
+{% endblock %}

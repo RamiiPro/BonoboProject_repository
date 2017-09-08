@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<link href="{{ asset('default.css') }}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ asset('fonts.css') }}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ asset('bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<span class="icon icon-cog"></span>
+			<div style="left: 100px;"><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+			<h1><a href="#">Espae Bonobos</a></h1>
+		</div>
+        {% block menu %}
+			<div id="menu">
+				<ul>
+					<li class="active"><a href="{{ path('bonobo_bonobo_list') }}" accesskey="1" title="">Liste des Bonobos</a></li>
+					<li><a href="{{ path('bonobo_bonobo_ajouter1') }}" accesskey="2" title="">mes informations personnelles</a></li>
+					<li><a href="{{ path('bonobo_bonobo_Recherche') }}" accesskey="3" title="">Chercher un Bonobo</a></li>
+
+				</ul>
+			</div>
+        {% endblock  %}
+	</div>
+</div>
+<div class="wrapper">
+	<div id="banner" class="container"><img src="{{ asset('images/banobo.jpg') }}" width="1200" height="500" alt="" /></div>
+	<div id="welcome" class="container">
+
+		<div class="title">
+			<h2>Bienvenue au siteweb des Banobos</h2>
+		</div>
+		<p>Le <strong>Bonobo</strong>, appartient à la famille des « grands singes », sans queue, dit anthropomorphe, c’est-à-dire que sa physionomie se rapproche de celle de l’Homme, comme 3 autres espèces. Parmi, les singes, il est celui qui partage le plus de gènes avec l’Homme, soit 99.4 % du code génétique humain. </p>
+	</div>
+	<div id="three-column" class="container">
+        {% block body %}
+			<div><span class="arrow-down"></span></div>
+			<div id="tbox1">
+				<div class="title">
+					<h2>Maecenas luctus</h2>
+				</div>
+				<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Duis pretium velit ac suscipit mauris. Proin eu wisi suscipit nulla suscipit interdum.</p>
+				<a href="#" class="button">Learn More</a> </div>
+			<div id="tbox2">
+				<div class="title">
+					<h2>Integer gravida</h2>
+				</div>
+				<p>Proin eu wisi suscipit nulla suscipit interdum. Nullam non wisi a sem semper suscipit eleifend. Donec mattis libero eget urna. Duis  velit ac mauris.</p>
+				<a href="#" class="button">Learn More</a> </div>
+			<div id="tbox3">
+				<div class="title">
+					<h2>Praesent mauris</h2>
+				</div>
+				<p>Donec mattis libero eget urna. Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum. Nullam non wisi a sem suscipit  eleifend.</p>
+				<a href="#" class="button">Learn More</a> </div>
+        {% endblock %}
+	</div>
+
+</div>
+<div id="footer">
+	<div class="container">
+		<div class="fbox1">
+			<span class="icon icon-edit"></span>
+			<span>Rami SASSI</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-envelope"></span>
+			<span>rami.sassi@esprit.tn</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-phone"></span>
+			<span>
+				Télephone: +216 24 656 210
+			</span>
+		</div>
+	</div>
+</div>
+<div id="copyright" style="background-color:#2364B7">
+	<p>&copy; Untitled. All rights reserved. | Realized by <a >Rami SASSI</a>.</p>
+	<ul class="contact">
+		<font color="#FFFFFF">Contacter le développeur du site: </font>
+		<li><a href="https://www.linkedin.com/in/rami-sassi-a94235132/" class="icon icon-linkedin"><span>Google+</span></a></li>
+		<li><a href="https://ramisassi.wixsite.com/mycv" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+		<li><a href="https://www.facebook.com/rami.sassi1" class="icon icon-facebook"><span></span></a></li>
+
+
+	</ul>
+</div>
+</body>
+</html>
